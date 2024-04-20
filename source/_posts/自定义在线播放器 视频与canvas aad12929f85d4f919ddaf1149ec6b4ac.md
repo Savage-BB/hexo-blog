@@ -1,20 +1,26 @@
 ---
-title: 视频与canvas
-date: 2024-01-13 18:54:43
-description: 自定义在线播放器
+title: 自定义在线播放器
+date: 2024-01-13 
+description: 自定义在线播放器|视频与canvas
 categories: web
 tags: 
   - canvas
   - HTML5
 ---
-# 视频与canvas|自定义在线播放器
+# 自定义在线播放器|视频与canvas
 
->Web 的迷人之处在于你可以结合各种技术创造出新的形式。拥有浏览器中的原生音频和视频意味着我们可在像 [\<canvas\>](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/canvas)、[WebGL](https://developer.mozilla.org/zh-CN/docs/Web/API/WebGL_API) 或 [Web Audio API](https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Audio_API) 等技术的辅助下使用这类数据流，例如：为音频添加混响和压缩效果，或为视频添加灰度/暗色滤镜。[\<video\>](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/video) MDN web doc
+![Untitled](/pic/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9C%A8%E7%BA%BF%E6%92%AD%E6%94%BE%E5%99%A8%20%E8%A7%86%E9%A2%91%E4%B8%8Ecanvas%20aad12929f85d4f919ddaf1149ec6b4ac/Untitled.png)
 
-根据调研，当前主流在线视频播放网站处理播放器的方案是用\<canvas\>和\<video\> 标签配合使用来实现自定义的在线播放器。如哔哩哔哩、虎牙等网站。
+在使用网页去观看视频时，大家可能会注意到主流网站的**在线播放器**功能非常丰富，弹幕，热点跳转等。如果你在网页看过虎牙LOL直播，可能会体验到更强大的交互功能，比如实时查看选手经济，符文等，那么这些功能到底是如何实现的呢？
+
+一般来说，普通的 `<video>` 标签只提供了基础的视频播放功能，例如播放、暂停、音量控制、全屏等。要实现更加丰富的功能，网站通常会借助其他技术和组件来实现，下图是拥有简单功能的播放器
+
+![屏幕截图 2024-04-18 143506.png](/pic/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9C%A8%E7%BA%BF%E6%92%AD%E6%94%BE%E5%99%A8%20%E8%A7%86%E9%A2%91%E4%B8%8Ecanvas%20aad12929f85d4f919ddaf1149ec6b4ac/%25E5%25B1%258F%25E5%25B9%2595%25E6%2588%25AA%25E5%259B%25BE_2024-04-18_143506.png)
 
 
-video标签可以通过controls属性来控制默认的控制条是否显示，但是传统的控制条只具有基本的控制功能，如播放、声音、全屏等，无法满足日益增加的用户需求，同时canvas比video具有更强大的灵活性和控制性。以下是使用Canvas来改造视频的优势：
+根据我的搜索调研呢，发现当前主流在线视频播放网站处理播放器的方案是用`<canvas>`和`<video>`标签配合使用来实现自定义的在线播放器。
+
+video标签可以通过controls属性来控制默认的控制条是否显示，但是传统的控制条只具有基本的控制功能，同时canvas比video具有更强大的灵活性和控制性。以下是一些使用Canvas来改造视频的优势：
 
 1. 自定义渲染：使用Canvas可以完全自定义视频的渲染过程。你可以通过使用Canvas API绘制视频帧，实现各种特效、滤镜、变换等。这样可以为视频添加独特的风格和视觉效果，提升用户体验。
 2. 跨平台支持：Canvas是HTML5的一部分，几乎所有现代浏览器都支持Canvas标签。这意味着你可以在不同的设备上（包括桌面、移动设备等）使用Canvas来播放视频，而无需依赖特定的视频解码器或插件。
@@ -96,9 +102,12 @@ function drawFrame() {
 
 这时我们可以把video的display设置为none，将video隐藏掉，在canvas上创建自己的视频控制条，以及各种自定义功能。因为canvas是以画布整体来使用，如果想在canvas上操作元素需要设置遮罩层，在遮罩层上添加元素。
 
-## NOTE
+NOTE**：**
 
 - 进度条实现原理：video标签duration属性可以获取到视频总时长，currentTime可以获取当前播放时间
-- duration是只读属性,如果数据未加载完成读取,会出现NAN提示
-- 设置控制条交互时，需要处理好重叠元素的事件触发问题，这里很容易出现BUG
-- [\<video\>](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/video) MDN web doc 详细记录了video标签的属性，实际场景中出现的问题基本都可以用这些属性解决
+- duration是只读属性如果数据未加载完成时读取会出现NAN提示
+- 设置控制条交互需要处理好重叠元素的事件触发问题，这里很容易出现BUG
+- `[<video>](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/video)` MDN web doc 详细记录的video标签的属性，实际场景中出现的问题基本都可以用这些属性解决
+
+> Web 的迷人之处在于你可以结合各种技术创造出新的形式。拥有浏览器中的原生音频和视频意味着我们可在像 `[<canvas>](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/canvas)`、[WebGL](https://developer.mozilla.org/zh-CN/docs/Web/API/WebGL_API) 或 [Web Audio API](https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Audio_API) 等技术的辅助下使用这类数据流，例如：为音频添加混响和压缩效果，或为视频添加灰度/暗色滤镜。`[<video>](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/video)` MDN web doc
+>

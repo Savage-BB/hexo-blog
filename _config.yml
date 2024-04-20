@@ -7,7 +7,7 @@ title: Savage
 subtitle: G
 description: ''
 keywords:
-author: Gaoxuefeng
+author: 高雪峰
 language: zh-CN
 timezone: Asia/Shanghai
 
@@ -103,5 +103,5 @@ theme: next
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: gitgao@101.42.166.23:/home/gitgao/hexoBlog.git #https://bitbucket.org/JohnSmith/johnsmith.bitbucket.io
+  repo: git@112.124.46.178:/home/git/blog.git #https://bitbucket.org/JohnSmith/johnsmith.bitbucket.io
   branch: master
