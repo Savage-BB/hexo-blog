@@ -1,6 +1,6 @@
 ---
 title: Redis入门
-date: 2023-04-30
+date: 2022-07-26
 description: 介绍Redis基础的使用
 categories: 数据库
 tags: 

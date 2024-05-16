@@ -1,6 +1,6 @@
 ---
 title: Hexo 部署 — Ubuntu
-date: 2023-05-29 
+date: 2022-03-20 
 description: Hexo 部署在Ubuntu云服务器上
 categories: other
 tags: 

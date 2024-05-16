@@ -1,6 +1,6 @@
 ---
 title: 二叉树PLUS（搜索树、平衡树）
-date: 2023-04-29 
+date: 2022-05-07 
 description: 总结一下二叉树的升级版，搜索树和平衡树。
 categories: 算法
 tags: 
