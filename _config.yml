@@ -5,9 +5,9 @@
 # Site
 title: Savage
 subtitle: G
-description: ''
+description: 'Any problem  in computer science can be solved by anther layer of indirection'
 keywords:
-author: 高雪峰
+author: Savage
 language: zh-CN
 timezone: Asia/Shanghai
 
@@ -105,3 +105,8 @@ deploy:
   type: git
   repo: git@112.124.46.178:/home/git/blog.git #https://bitbucket.org/JohnSmith/johnsmith.bitbucket.io
   branch: master
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
