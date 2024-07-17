@@ -2,7 +2,9 @@
 title: Ticket Server
 date: 2024-06-19
 description: Flickr 公司的ID生成方案，这是一种成本很小的分布式唯一主键生成方案，主要是用MySQL自增来生成。
-categories: 分布式ID
+categories: 系统设计
+tag: 
+  - 分布式ID
 mathjax: true
 ---
 # Ticket Server
